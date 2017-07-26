@@ -1,0 +1,21 @@
+<div class="col-lg-4 col-md-3 col-sm-12">
+    <md-list wpCollection="/wp-json/wp-api-menus/v2/menus/4" [wpArgs]="{}" (wpResponse)="menus = $event.data.items">
+        <md-list-item  *ngFor="let menu of menus"
+                       [routerLink]="menu.title.replace(' ', '').toLowerCase()" >{{ menu.title }}
+        </md-list-item>
+    </md-list>
+
+
+    <!--<md-list wpCollection="pages" [wpArgs]="{ per_page: 10}" (wpResponse)="res = $event.data">
+
+        <md-list-item *ngFor="let post of res" (click)="showPost(post.id)" > {{ post.title.rendered }} </md-list-item>
+
+    </md-list>-->
+</div>
+
+
+    <div class="col-lg-8 col-md-9 col-sm-12">
+        <app-page [slug]='slug'  ></app-page>
+    </div>
+
+

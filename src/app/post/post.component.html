@@ -1,0 +1,15 @@
+<div wpModel="posts" [wpId]="selectedSlug()" [wpArgs]="{ _embed: true }" (wpResponse)="listpost = $event.data">
+
+
+      <md-card>
+            <h1 >{{listpost?.title?.rendered}} </h1>
+            <img  [src]="listpost?.acf?.hoofdafbeelding?.sizes?.large">
+            <!--<img *ngIf="listpost?.featured_media != 0" [src]=" listpost?._embedded['wp:featuredmedia'][0]?.media_details?.sizes['large']?.source_url ">-->
+            <div *ngIf="listpost" [innerHTML]="listpost?.content?.rendered"></div>
+      </md-card>
+
+
+
+
+
+</div>

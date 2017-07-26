@@ -1,0 +1,16 @@
+<div class="content">
+    <div class="col-lg-4 col-md-4 col-sm-12">
+
+      <div wpCollection="pages" [wpArgs]="{slug: 'overons'}" (wpResponse)="post = $event.data[0]">
+        <h1>{{post?.title?.rendered}}</h1>
+        <div [innerHTML]="post?.content?.rendered"></div>
+      </div>
+
+    </div>
+  <div class="col-lg-4 col-md-4 col-sm-12">
+
+
+  </div>
+
+</div>
+

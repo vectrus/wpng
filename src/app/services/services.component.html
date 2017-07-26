@@ -1,0 +1,40 @@
+<div class="content">
+  <div class="col-lg-3 col-md-3 col-sm-4">
+    <h1 class="page-title">Services</h1>
+    <md-list wpCollection="posts" [wpArgs]="{ _embed: true,
+    categories: 5} " (wpResponse)="res = $event.data">
+
+      <md-list-item *ngFor="let post of res" (click)="showPortFolio(post.id)"> {{ post?.title.rendered }}</md-list-item>
+
+    </md-list>
+  </div>
+<!--<div wpCollection="posts" [wpArgs]="{ _embed: true,categories: 2} " (wpResponse)="portres = $event.data">
+  <div [swiper]="config" class="swiper-container" (indexChange)="onIndexChange($event)" (reachEnd)="onReachEnd($event)" >
+    <div class="swiper-wrapper">
+      <div *ngFor="let portpost of portres" class="swiper-slide">
+
+          <h1 class="post-title">{{portpost?.title?.rendered}} </h1>
+          <div [innerHTML]="portpost?.content?.rendered"></div>
+
+          <img [src]=" portpost?._embedded['wp:featuredmedia'][0]?.media_details?.sizes['medium']?.source_url ">
+
+
+      </div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+  </div>
+</div>-->
+
+
+
+
+  <div class="col-lg-9 col-md-9 col-sm-8">
+    <app-post [slug]='slug'  ></app-post>
+  </div>
+</div>
+

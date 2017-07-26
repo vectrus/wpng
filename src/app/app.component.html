@@ -1,0 +1,37 @@
+<md-sidenav-container fullscreen>
+  <md-sidenav #sidenav mode="side" opened="false">
+    <!-- sidenav content -->
+
+    <md-list wpCollection="/wp-json/wp-api-menus/v2/menus/4" [wpArgs]="{}" (wpResponse)="menus = $event.data.items">
+      <md-list-item  *ngFor="let menu of menus"
+              [routerLink]="menu.title.replace(' ', '').toLowerCase()" (click)="sidenav.close()">{{ menu.title }}
+      </md-list-item>
+    </md-list>
+
+  </md-sidenav>
+
+  <md-toolbar layout="row" color="primary" layout-align="start end">
+
+    <div class="logo" id="logo">
+
+      <img [src]="logo">
+
+    </div>
+
+
+    <!--<md-button-toggle [mdMenuTriggerFor]="appMenu" aria-labelledby="menutoggle"><md-icon aria-hidden="true">menu</md-icon></md-button-toggle>-->
+    <span flex>&nbsp;</span>
+
+    <button md-button type="button" (click)="sidenav.toggle()">
+      <md-icon>menu</md-icon>
+    </button>
+    <!--<button md-button [mdMenuTriggerFor]="appMenu"><md-icon>Menu</md-icon></button>-->
+
+  </md-toolbar>
+  <!-- primary content -->
+  <router-outlet></router-outlet>
+
+</md-sidenav-container>
+
+
+

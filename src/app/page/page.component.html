@@ -1,0 +1,16 @@
+<div wpModel="pages" [wpId]="selectedSlug()" [wpArgs]="{ _embed: true }" (wpResponse)="listpage = $event.data" >
+
+
+
+  <div class="header-image">
+    <img  [src]="listpage?.acf?.hoofdafbeelding?.url"></div>
+  <!--<img *ngIf="listpage?.featured_media != 0" [src]="  listpage?._embedded['wp:featuredmedia'][0]?.media_details?.sizes['medium']?.source_url ">-->
+  <h1 class="post-title">{{listpage?.title?.rendered}}</h1>
+  <div *ngIf="listpage" [innerHTML]="listpage?.content?.rendered"></div>
+
+
+
+
+
+
+</div>

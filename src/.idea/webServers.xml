@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ec7c7933-c329-4ec4-9b72-7f10a696860f" name="nike.vectrus.nl" url="http://nike.vectrus.nl:4200">
+        <fileTransfer host="nike.vectrus.nl" port="21" rootFolder="/wpng">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" showHiddenFiles="true" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
